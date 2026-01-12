@@ -1,3 +1,4 @@
+import logoGithub from '../../assets/github.svg'
 
 export function Header(){
     return (
@@ -13,7 +14,7 @@ export function Header(){
 
         <nav className="flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
             <a href="https://github.com/rgarthur" className="hover:text-blue-400 hover:drop-shadow-[0_0_5px_rgba(96,165,250,0.8)] transition-all">
-                <img src="/github.svg" alt="" className="w-8 h-8" />
+                <img src={logoGithub} alt="" className="w-8 h-8" />
             </a>
             <a href="#presentationCard" className="hover:text-blue-400 hover:drop-shadow-[0_0_5px_rgba(96,165,250,0.8)] transition-all">
                 Sobre Mim

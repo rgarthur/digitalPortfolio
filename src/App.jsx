@@ -3,13 +3,15 @@ import { Header } from './components/header/header'
 import { HeroCard } from './components/heroCard/heroCard'
 import { Reveal } from './components/reveal/reveal'
 import { PresentationCard } from './components/presentationCard/presentationCard'
+import Background from './assets/sky.mp4'
+import profileImg from './assets/foto.jpg'
 
 function App() {
   return (
     <>
     <div className="fixed inset-0 -z-10 h-full w-full overflow-hidden">
       <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-        <source src="/sky.mp4" type="video/mp4"/>
+        <source src={Background} type="video/mp4"/>
       </video>
       <div className="absolute inset-0 bg-black/40" />
     </div>
@@ -25,7 +27,7 @@ function App() {
             <PresentationCard 
               title={'Arthur Rocha Gaspar'} 
               desc={'19 anos'}
-              img={'/foto.jpg'} 
+              img={profileImg} 
               longDesc={`Minha paixão pela tecnologia começou cedo: o computador faz parte do meu cotidiano desde a infância. 
                 Aos 12 anos, movido pela necessidade e pela curiosidade, aprendi a manipular hardware para realizar meus próprios reparos. 
                 O que começou como um desafio pessoal tornou-se minha porta de entrada no mercado de trabalho. Aos 15, eu já prestava suporte técnico para amigos e conhecidos. 
