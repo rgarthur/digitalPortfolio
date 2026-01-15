@@ -1,22 +1,31 @@
 import './App.css'
 import { Header } from './components/header/header'
 import { HeroCard } from './components/heroCard/heroCard'
-import { Reveal } from './components/reveal/reveal'
 import { PresentationCard } from './components/presentationCard/presentationCard'
-import Background from './assets/sky.mp4'
+import { useState } from 'react'
 import profileImg from './assets/foto.jpg'
+import skyStars from './assets/skyStars.mp4'
+import winter from './assets/winter.mp4'
 
 function App() {
+  const [isLight, setIsLight] = useState(false);
+
   return (
     <>
-    <div className="fixed inset-0 -z-10 h-full w-full overflow-hidden">
-      <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-        <source src={Background} type="video/mp4"/>
-      </video>
-      <div className="absolute inset-0 bg-black/40" />
-    </div>
-    <div className="h-screen flex flex-col overflow-hidden bg-transparent"> 
-      <Header />
+      <div className="fixed inset-0 -z-10 h-full w-full overflow-hidden">
+        <video 
+          key={isLight ? 'winter' : 'stars'}
+          autoPlay loop muted playsInline 
+          className="w-full h-full object-cover transition-opacity duration-1000"
+        >
+          <source src={isLight ? winter : skyStars} type="video/mp4" />
+        </video>
+        <div className={`absolute inset-0 transition-colors duration-5000 ${isLight ? 'bg-white/20' : 'bg-black/40'}`} />
+      </div>
+
+      <div className="h-screen flex flex-col overflow-hidden bg-transparent"> 
+        <Header onThemeChange={(value) => setIsLight(value)} />
+
       <main className='flex-1 overflow-y-auto snap-y snap-mandatory scroll-smooth no-scrollbar'>
         <section id='home' className='h-screen snap-start snap-stop-always box-sizing: border-box;'>
             <HeroCard />
