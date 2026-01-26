@@ -9,6 +9,8 @@ export function Reveal({ children, direction = 'up' }) {
         ([entry]) => {
             if (entry.isIntersecting) 
                 setIsVisible(true)
+            else 
+                setIsVisible(false)
         },
         { threshold: 0.1 }
     );

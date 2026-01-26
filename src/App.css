@@ -1,5 +1,4 @@
 @import "tailwindcss";
-/* No seu arquivo CSS */
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -8,4 +7,16 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+}
+
+@keyframes grow-line {
+  from { scale: 1 0; }
+  to { scale: 1 1; }
+}
+
+.timeline-line {
+  transform-origin: top;
+  animation: grow-line linear;
+  animation-timeline: view(); 
+  animation-range: entry 10% exit 30%;
 }
