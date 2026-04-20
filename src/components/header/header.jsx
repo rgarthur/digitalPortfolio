@@ -26,6 +26,9 @@ export function Header({ onThemeChange }){
              <a href="#skills" className="hover:text-blue-400 hover:drop-shadow-[0_0_5px_rgba(96,165,250,0.8)] transition-all">
                 Linguagens e Frameworks
             </a>
+            <a href="#projects"className="hover:text-blue-400 hover:drop-shadow-[0_0_5px_rgba(96,165,250,0.8)] transition-all">
+                Projetos
+            </a> 
             <Switch text1="Dark" text2="Light" onToggle={onThemeChange} />
         </nav>
         </header>

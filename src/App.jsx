@@ -5,6 +5,7 @@ import { PresentationCard } from './components/presentationCard/presentationCard
 import { JourneySection } from './components/timeLine/journeySection'
 import { Reveal } from './components/reveal/reveal'
 import { SkillsSection } from './components/skillsCard/skillSelection'
+import  ProjectsSection from './components/projectsCard/projectsSelection'
 import { useState } from 'react'
 import profileImg from './assets/foto.jpg'
 import skyStars from './assets/skyStars.mp4'
@@ -62,6 +63,12 @@ function App() {
         <section id='skills' className='bg-transparent'>
           <Reveal>
             <SkillsSection />
+          </Reveal>
+        </section>
+
+        <section id='projects' className='bg-transparent'>
+          <Reveal>
+            <ProjectsSection />
           </Reveal>
         </section>
 

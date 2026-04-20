@@ -17,8 +17,8 @@ export function SkillsSection() {
     { name: "Django", percentage: 50, icon: <SiDjango className="text-teal-500" />, color: "blue" },
     { name: "Java", percentage: 45, icon: <FaJava className="text-orange-500" />, color: "purple" },
     { name: "Git", percentage: 80, icon: <FaGitAlt className="text-red-400" />, color: "blue" },
-    { name: "C#", percentage: 20, icon: <TbBrandCSharp className="text-blue-500"/>, color: "purple" },
-    { name: "C#", percentage: 30, icon: <FaLaravel className="text-orange-600"/>, color: "blue" }
+    { name: "C#", percentage: 50, icon: <TbBrandCSharp className="text-blue-500"/>, color: "purple" },
+    { name: "Laravel", percentage: 50, icon: <FaLaravel className="text-orange-600"/>, color: "blue" }
   ];
 
   return (
