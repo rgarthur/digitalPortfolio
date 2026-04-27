@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProjectsCard from './projectsCard';
 import moneySaved from '../../assets/moneysavedLogo.png';
+import msMobile from '../../assets/msMobile.png';
 
 
 const initialProjects = [
@@ -19,7 +20,7 @@ const initialProjects = [
     id: 2,
     category: 'Mobile',
     titleUpper: 'MoneySaved Mobile',
-    image: moneySaved,  
+    image: msMobile,  
     titleLower: 'Versão Mobile',
     description: 'Um aplicativo com propósito simples de administração financeira pessoal, único, prático e fácil de usar.',
     tags: ['Kotlin'],
@@ -56,15 +57,26 @@ const ProjectsSection = () => {
     <section className="bg-midnight py-16 px-6 relative overflow-hidden">
       <div className="particles-overlay absolute inset-0 opacity-10"></div>
       
+      <style>
+        {`
+          @keyframes scaleFade {
+            0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+          }
+          .animate-scaleFade {
+            animation: scaleFade 0.4s ease-out forwards;
+          }
+        `}
+      </style>
+      
       <div className="container mx-auto relative z-10 space-y-12">
         
         {/* Título com efeito de brilho */}
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-white mb-4 drop-shadow-[0_0_10px_rgba(192,132,252,0.5)]">
-            <span className="absolute -inset-1 blur-2xl opacity-50 bg-purple"></span>
-            <span className="relative">Meus Projetos</span>
+          <h2 className="text-4xl font-bold text-white mb-4 drop-shadow-[0_0_10px_rgba(99,102,241,0.5)]">
+            Meus Projetos
           </h2>
-          <div className="w-16 h-1 bg-purple mx-auto mt-2 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-2 rounded-full"></div>
         </div>
 
         {/* Filtros */}
@@ -73,26 +85,27 @@ const ProjectsSection = () => {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-full font-medium transition text-sm flex items-center gap-2 
+              className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-sm border 
                 ${filter === cat 
-                  ? 'bg-purple text-white shadow-lg' 
-                  : 'bg-dark-purple text-white/70 hover:bg-purple/50'
+                  ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-[0_0_15px_rgba(99,102,241,0.5)] border-transparent scale-105' 
+                  : 'bg-slate-900/80 text-gray-300 hover:text-white border-white/10 hover:border-indigo-500/50 hover:bg-slate-800/80 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:-translate-y-0.5'
                 }`}
             >
-              <div className={`w-2 h-2 rounded-full ${filter === cat ? 'bg-cyan' : 'bg-white/50'}`}></div>
               {cat}
             </button>
           ))}
         </div>
 
         {/* Grade de Projetos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="flex flex-wrap justify-center gap-10 transition-all duration-500">
           {filteredProjects.length > 0 ? (
             filteredProjects.map(project => (
-              <ProjectsCard key={project.id} project={project} />
+              <div key={`${project.id}-${filter}`} className="w-full md:w-[calc(50%_-_1.25rem)] lg:w-[calc(33.333%_-_1.7rem)] animate-scaleFade flex">
+                <ProjectsCard project={project} />
+              </div>
             ))
           ) : (
-            <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-16 text-gray-400 bg-dark-purple rounded-xl border border-dashed border-purple/30">
+            <div className="w-full text-center py-16 text-gray-400 bg-slate-900/80 rounded-xl border border-dashed border-indigo-500/50 animate-scaleFade">
               <i className="ri-folder-open-line text-4xl mb-4"></i>
               <p>Nenhum projeto encontrado nesta categoria.</p>
             </div>

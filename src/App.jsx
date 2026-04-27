@@ -37,8 +37,8 @@ function App() {
           </Reveal>
         </section>
         
-        <section id="presentationCard" className="h-screen bg-transparent flex items-center justify-center p-10 overflow-hidden">
-          <div className="flex flex-row gap-8 items-center justify-center w-full max-w-6xl transition-all duration-500">
+        <section id="presentationCard" className="min-h-screen bg-transparent flex items-center justify-center p-6 md:p-10 py-20 overflow-hidden">
+          <div className="flex flex-col gap-8 items-center justify-center w-full max-w-6xl transition-all duration-500">
             <Reveal direction='up'>
             <PresentationCard 
               title={'Arthur Rocha Gaspar'} 

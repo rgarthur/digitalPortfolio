@@ -4,12 +4,15 @@ import { Reveal } from "../reveal/reveal";
 export function JourneySection() {
   return (
     <section className="min-h-screen py-20 relative flex flex-col items-center">
-      <h2 className="text-4xl font-bold text-white mb-16 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-        Minha Jornada
-      </h2>
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold text-white mb-4 drop-shadow-[0_0_10px_rgba(99,102,241,0.5)]">
+          Minha Jornada
+        </h2>
+        <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-2 rounded-full"></div>
+      </div>
 
       <div className="relative w-full max-w-4xl px-4">
-        <div className="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-blue-500 timeline-line shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+        <div className="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 to-blue-500 timeline-line shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
         <Reveal direction="up">
           <TimelineItem 
             year="2018" 
